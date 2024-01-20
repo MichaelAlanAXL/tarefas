@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd9409820588dbbc63f7a2f662a450681d93c89fe',
+        'reference' => 'b30e6cccb53a938f1458fe8b552a740e306dc816',
         'name' => 'michaelalanaxl/tarefas',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd9409820588dbbc63f7a2f662a450681d93c89fe',
+            'reference' => 'b30e6cccb53a938f1458fe8b552a740e306dc816',
             'dev_requirement' => false,
         ),
         'rain/raintpl' => array(
