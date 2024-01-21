@@ -4,19 +4,23 @@ require_once("vendor/autoload.php");
 
 use \Slim\Slim;
 use \App\Page;
+use \App\Model\Tarefas;
 
 $app = new Slim();
 
 $app->config('debug', true);
 
-//echo "hello world!";
 $app->get('/', function(){
 
-    //$products = Product::listAll();
+    $dados = Tarefas::listAll();    
+    
+    $page = new Page();    
 
-    $page = new Page();
+    $page->setTpl("index", [
+        
+        'dados'=>$dados
 
-    $page->setTpl("index");
+    ]);
 
 });
 

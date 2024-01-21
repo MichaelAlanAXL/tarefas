@@ -1,3 +1,26 @@
 
-	<h1>comece aqui ...</h1>
+<main>
+	<h1>Lista de Tarefas</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Número</th>
+				<th>Título</th>
+				<th>Descrição</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop="$dados"}
+				<tr>
+					<th>{$value.id}</th>
+					<td>{$value.title}</td>
+					<td>{$value.description}</td>
+					<td>{$value.status}</td>					
+				</tr>				
+			{/loop}
+		</tbody>
+	</table>
+</main>
 
