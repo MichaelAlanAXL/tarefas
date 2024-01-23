@@ -3,7 +3,7 @@
 	<h1>Lista de Tarefas</h1>
 
 	<div class="box-header">
-		<a href="/admin/users/create" class="btn btn-success">Cadastrar uma nova tarefa</a>
+		<a href="/cadastrar" class="btn btn-success">Cadastrar uma nova tarefa</a>
     </div>
 
 	<table class="table table-hover">
@@ -18,13 +18,13 @@
 		<tbody>
 			<?php $counter1=-1;  if( isset($dados) && ( is_array($dados) || $dados instanceof Traversable ) && sizeof($dados) ) foreach( $dados as $key1 => $value1 ){ $counter1++; ?>
 				<tr>
-					<th scope="row"><?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?></th>
+					<th scope="row">#<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?></th>
 					<td><?php echo htmlspecialchars( $value1["title"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
 					<td><?php echo htmlspecialchars( $value1["description"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
 					<td><?php echo htmlspecialchars( $value1["status"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>	
 					<td>
-						<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-edit fa-lg"></i>Editar</a>
-						<a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-lg"></i>Excluir</a>
+						<a href="/editar/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit fa-lg"></i>Editar</a>
+						<a href="/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente excluir esta tarefa?')" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-lg"></i>Excluir</a>
 					</td>				
 				</tr>				
 			<?php } ?>

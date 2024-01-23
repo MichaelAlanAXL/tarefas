@@ -21,8 +21,7 @@ class Tarefas extends Model {
 
 		$sql = new Sql();
 
-		$results = $sql->select("CALL sp_save_task(:id, :title, :description, :status)", array(
-			":id"=>$this->getid(),
+		$results = $sql->select("CALL sp_salvar_cadastro(:title, :description, :status)", array(
 			":title"=>$this->gettitle(),
 			":description"=>$this->getdescription(),
 			":status"=>$this->getstatus()
@@ -45,6 +44,24 @@ class Tarefas extends Model {
         if (count($results) > 0) {
 		    $this->setData($results[0]);
         }
+	}
+
+	public function update() 
+	{
+
+		$sql = new Sql();
+
+		$results = $sql->select("CALL sp_atualizar_cadastro(:id, :title, :description, :status)", array(
+			":id"=>$this->getid(),
+			":title"=>$this->gettitle(),
+			":description"=>$this->getdescription(),
+			":status"=>$this->getstatus()
+		));
+		
+		if (count($results) > 0) {
+			$this->setData($results[0]);
+	    }
+
 	}
 
 	public function delete()

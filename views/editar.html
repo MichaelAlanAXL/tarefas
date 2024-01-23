@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="mt-4 mb-5">Editar Tarefa:</h1>
+
+    <form action="/editar/{$tarefa.id}" method="post">
+         <div class="form-group">
+            <label for="titulo"><strong>Número:</strong></label>
+            <input type="text" class="form-control col-sm-2 mb-4" id="titulo" name="title" value="{$tarefa.id}" required readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="titulo"><strong>Título:</strong>:</label>
+            <input type="text" class="form-control col-sm-3 mb-4" id="titulo" name="title" value="{$tarefa.title}" required autofocus>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao"><strong>Descrição:</strong>:</label>
+            <input type="text" class="form-control col-sm-6 mb-4" id="descricao" name="description" value="{$tarefa.description}" required></input>
+        </div>
+
+        <div class="form-group">
+            <label for="status"><strong>Status:</strong>:</label>
+            <input type="text" class="form-control col-sm-3 mb-4" id="status" name="status" value="{$tarefa.status}" required >
+        </div>
+
+        <button type="submit" class="btn btn-primary"> Salvar</button>
+    </form>
+</div>
