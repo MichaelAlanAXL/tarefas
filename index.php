@@ -88,6 +88,14 @@ $app->get('/:id', function($id){
 
 });
 
+$app->get('/baixar', function(){
+
+    $page = new Page();
+
+    $page->setTpl("baixo");
+
+});
+
 $app->run();
 
 ?>
